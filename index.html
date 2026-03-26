@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Amaz Amaj Primary Cooperative | Community Agriculture & Hemp Farming</title>
+  <meta name="description" content="Amaz Amaj Primary Cooperative PTY LTD: Empowering rural communities through sustainable agriculture, industrial hemp, livestock, and cooperative farming without displacing families.">
+  <meta name="keywords" content="agricultural cooperative, hemp farming South Africa, community farming, sustainable agriculture, rural development, Eastern Cape farming">
+  <meta name="author" content="Amaz Amaj Primary Cooperative">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ---------- DESIGN SYSTEM ---------- */
+    :root {
+      /* Colors */
+      --primary: #1E3A2F;
+      --primary-dark: #142B22;
+      --primary-light: #2C5A46;
+      --gold: #D4AF37;
+      --gold-dark: #B8941E;
+      --gold-light: #E5C76E;
+      --earth: #5A3E2B;
+      --earth-light: #7B5A42;
+      --background: #FEF9F0;
+      --card: #FFFFFF;
+      --foreground: #2C3E2F;
+      --muted-foreground: #6B7A6F;
+      --border: #E5E0D6;
+      --primary-foreground: #FFFFFF;
+      
+      /* Spacing */
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 32px;
+      --space-xl: 48px;
+      --space-2xl: 64px;
+      --space-3xl: 96px;
+      
+      /* Radius */
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 28px;
+      --radius-full: 9999px;
+      
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 20px rgba(0,0,0,0.08);
+      --shadow-lg: 0 12px 28px rgba(0,0,0,0.12);
+      --shadow-hover: 0 8px 24px rgba(0,0,0,0.12);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+    
+    /* Animations */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .animate-fade-up {
+      animation: fadeUp 0.6s ease forwards;
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    /* Stagger children animations */
+    .stagger-children > * {
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+    
+    .stagger-children > *:nth-child(1) { animation-delay: 0s; }
+    .stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+    .stagger-children > *:nth-child(3) { animation-delay: 0.2s; }
+    .stagger-children > *:nth-child(4) { animation-delay: 0.3s; }
+    .stagger-children > *:nth-child(5) { animation-delay: 0.4s; }
+    .stagger-children > *:nth-child(6) { animation-delay: 0.5s; }
+    
+    /* Scroll-triggered animations */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Buttons */
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      padding: 12px 28px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    
+    .btn-primary:hover {
+      background-color: var(--gold);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .btn-gold {
+      background-color: var(--gold);
+      color: var(--primary);
+      padding: 14px 32px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    
+    .btn-gold:hover {
+      background-color: var(--gold-light);
+      transform: scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    /* Cards */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+    }
+    
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    
+    /* Modal */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .modal-content {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      max-width: 500px;
+      width: 90%;
+      padding: var(--space-xl);
+      position: relative;
+      transform: scale(0.9);
+      transition: all 0.3s ease;
+    }
+    
+    .modal-overlay.active .modal-content {
+      transform: scale(1);
+    }
+    
+    .modal-close {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--muted-foreground);
+    }
+    
+    /* Form */
+    .form-group {
+      margin-bottom: var(--space-md);
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: var(--space-xs);
+      font-weight: 500;
+      color: var(--foreground);
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      transition: border-color 0.3s ease;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    
+    /* Utility */
+    .text-center { text-align: center; }
+    .text-gold { color: var(--gold); }
+    .text-primary { color: var(--primary); }
+    .bg-gold { background-color: var(--gold); }
+    .bg-primary { background-color: var(--primary); }
+    .bg-earth { background-color: var(--earth); }
+    .bg-card { background-color: var(--card); }
+    .bg-background { background-color: var(--background); }
+    
+    /* Hero Background - Matching your original design */
+    .hero-bg {
+      background: linear-gradient(135deg, var(--earth) 0%, var(--primary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Optional: Add subtle pattern overlay like your original design */
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="white" d="M20,20 L30,20 L25,30 Z M70,70 L80,70 L75,80 Z M40,80 L50,80 L45,90 Z M80,30 L90,30 L85,40 Z"/></svg>');
+      background-repeat: repeat;
+      pointer-events: none;
+    }
+    
+    .hero-bg > * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Stats section background */
+    .stats-bg {
+      background: linear-gradient(135deg, var(--background) 0%, #FEF5E8 100%);
+    }
+    
+    /* Testimonials background - same as your original earth color */
+    .testimonials-bg {
+      background: linear-gradient(135deg, var(--earth) 0%, #4A3222 100%);
+    }
+    
+    /* Section spacing */
+    section {
+      padding: var(--space-2xl) 0;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      section {
+        padding: var(--space-xl) 0;
+      }
+      .container {
+        padding: 0 var(--space-sm);
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      h2 {
+        font-size: 1.75rem;
+      }
+    }
+    
+    @media (max-width: 640px) {
+      .grid-cols-2 {
+        grid-template-columns: 1fr;
+      }
+      .btn-primary, .btn-gold {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    
+    /* Grid */
+    .grid {
+      display: grid;
+      gap: var(--space-md);
+    }
+    
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+    
+    @media (max-width: 768px) {
+      .grid-cols-3, .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+    }
+    
+    @media (max-width: 480px) {
+      .grid-cols-2, .grid-cols-3, .grid-cols-4 { grid-template-columns: 1fr; }
+    }
+    
+    /* Flex */
+    .flex { display: flex; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .gap-2 { gap: var(--space-sm); }
+    .gap-3 { gap: var(--space-md); }
+    .gap-4 { gap: var(--space-lg); }
+    
+    /* Icon containers */
+    .icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .icon-circle-primary { background: rgba(30, 58, 47, 0.15); }
+    .icon-circle-gold { background: rgba(212, 175, 55, 0.15); }
+    
+    /* Timeline */
+    .timeline-dot {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(30, 58, 47, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .timeline-line {
+      width: 2px;
+      height: 100%;
+      background: var(--border);
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Banner - Same gradient background as your original design -->
+  <section class="hero-bg" style="padding-top: 80px;">
+    <div class="container text-center">
+      <div class="stagger-children">
+        <h1 class="font-display" style="font-size: 3rem; color: white; margin-bottom: var(--space-sm);">
+          About Our Cooperative
+        </h1>
+        <p style="color: rgba(255,255,255,0.85); font-size: 1.125rem; max-width: 800px; margin: 0 auto;">
+          Amaz Amaj Primary Cooperative PTY LTD is a community-driven agricultural enterprise built on trust, shared ownership, and sustainable farming.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="bg-background">
+    <div class="container">
+      <div class="grid grid-cols-2" style="gap: var(--space-lg);">
+        <div class="card scroll-reveal">
+          <div class="flex items-center gap-3" style="margin-bottom: var(--space-sm);">
+            <div class="icon-circle icon-circle-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h2 class="font-display" style="font-size: 1.75rem;">Our Mission</h2>
+          </div>
+          <p style="color: var(--muted-foreground); line-height: 1.6;">
+            To empower rural communities through cooperative agriculture, creating sustainable livelihoods by aggregating household garden plots into productive farming blocks — without displacing families from their ancestral land.
+          </p>
+        </div>
+        <div class="card scroll-reveal">
+          <div class="flex items-center gap-3" style="margin-bottom: var(--space-sm);">
+            <div class="icon-circle icon-circle-gold">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h2 class="font-display" style="font-size: 1.75rem;">Our Vision</h2>
+          </div>
+          <p style="color: var(--muted-foreground); line-height: 1.6;">
+            To become Africa's leading cooperative farming model — proving that community-owned agriculture can deliver commercial-scale returns while preserving land rights, feeding families, and creating dignified employment for the youth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Land Model -->
+  <section class="bg-card">
+    <div class="container">
+      <div class="text-center scroll-reveal">
+        <h2 class="font-display" style="font-size: 2.5rem; margin-bottom: var(--space-md);">Our Land Model</h2>
+        <p style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 800px; margin: 0 auto var(--space-md);">
+          The land is a standalone big garden — not one large commercial estate. Each household in our partner villages owns between <strong>2 to 4 standard garden plots</strong>, depending on family size and village allocation.
+        </p>
+        <p style="font-size: 1.125rem; color: var(--muted-foreground); max-width: 800px; margin: 0 auto var(--space-lg);">
+          Through signed MOUs, these household gardens are aggregated into a cooperative farming block — without displacing anyone. Families keep ownership of their plots while benefiting from shared machinery, inputs, and market access that only scale can provide.
+        </p>
+      </div>
+      
+      <div class="card scroll-reveal" style="background: var(--background); border: 1px solid var(--border);">
+        <p class="font-display text-gold" style="font-size: 1.25rem; font-weight: bold; margin-bottom: var(--space-md); text-align: center;">How It Works</p>
+        <div class="grid grid-cols-2" style="gap: var(--space-sm);">
+          <div class="flex items-start gap-3" style="padding: var(--space-sm); background: var(--card); border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <p style="font-size: 0.875rem;">Each household contributes 2–4 garden plots to the cooperative block</p>
+          </div>
+          <div class="flex items-start gap-3" style="padding: var(--space-sm); background: var(--card); border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <p style="font-size: 0.875rem;">Land ownership stays with the family — always</p>
+          </div>
+          <div class="flex items-start gap-3" style="padding: var(--space-sm); background: var(--card); border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <p style="font-size: 0.875rem;">The cooperative provides seeds, fertilizer, machinery & market access</p>
+          </div>
+          <div class="flex items-start gap-3" style="padding: var(--space-sm); background: var(--card); border-radius: var(--radius-sm); border: 1px solid var(--border);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            <p style="font-size: 0.875rem;">Revenue is shared proportionally based on land contributed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Stats -->
+  <section class="stats-bg">
+    <div class="container">
+      <h2 class="font-display text-center" style="font-size: 2rem; margin-bottom: var(--space-xl);">Our Impact in Numbers</h2>
+      <div class="grid grid-cols-4" style="gap: var(--space-md);">
+        <div class="card text-center scroll-reveal">
+          <p class="font-display text-primary" style="font-size: 2.5rem; font-weight: bold;">2,500+</p>
+          <p style="color: var(--muted-foreground); font-size: 0.875rem;">Hectares Aggregated</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <p class="font-display text-gold" style="font-size: 2.5rem; font-weight: bold;">150+</p>
+          <p style="color: var(--muted-foreground); font-size: 0.875rem;">Partner Households</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <p class="font-display text-primary" style="font-size: 2.5rem; font-weight: bold;">800+</p>
+          <p style="color: var(--muted-foreground); font-size: 0.875rem;">Jobs Created</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <p class="font-display text-gold" style="font-size: 2.5rem; font-weight: bold;">5</p>
+          <p style="color: var(--muted-foreground); font-size: 0.875rem;">Revenue Streams</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Grow -->
+  <section class="bg-card">
+    <div class="container">
+      <h2 class="font-display text-center" style="font-size: 2rem; margin-bottom: var(--space-xl);">What We Grow & Raise</h2>
+      
+      <!-- Placeholder images - Replace with actual images -->
+      <div class="grid grid-cols-2" style="gap: var(--space-lg); margin-bottom: var(--space-xl);">
+        <div class="scroll-reveal">
+          <div style="background: linear-gradient(135deg, var(--primary-light), var(--primary)); height: 256px; border-radius: var(--radius-md); margin-bottom: var(--space-sm); display: flex; align-items: center; justify-content: center; color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h3 class="font-display" style="font-size: 1.25rem;">Industrial Hemp</h3>
+          <p style="color: var(--muted-foreground); margin-top: var(--space-xs);">800 hectares producing fiber, seed, and CBD for premium export markets. Hemp is one of the most versatile crops, providing materials for textiles, construction, and health products.</p>
+        </div>
+        <div class="scroll-reveal">
+          <div style="background: linear-gradient(135deg, var(--earth), var(--earth-light)); height: 256px; border-radius: var(--radius-md); margin-bottom: var(--space-sm); display: flex; align-items: center; justify-content: center; color: white;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1"><path d="M16 3h3v3M8 3H5v3M16 21h3v-3M8 21H5v-3"/><path d="M12 7v10M7 12h10"/></svg>
+          </div>
+          <h3 class="font-display" style="font-size: 1.25rem;">Livestock & Row Crops</h3>
+          <p style="color: var(--muted-foreground); margin-top: var(--space-xs);">250+ cattle, 550+ small stock (sheep, goats, poultry), plus 1,500 hectares of maize and legumes for food security and commercial grain supply.</p>
+        </div>
+      </div>
+      
+      <!-- Product grid -->
+      <div class="grid grid-cols-4" style="gap: var(--space-sm);">
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto var(--space-xs);"><path d="M16 3h3v3M8 3H5v3M16 21h3v-3M8 21H5v-3"/><path d="M12 7v10M7 12h10"/></svg>
+          <p class="font-display" style="font-weight: bold;">Cattle</p>
+          <p class="text-gold" style="font-size: 0.75rem; font-weight: 600;">250+ head</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="margin: 0 auto var(--space-xs);"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <p class="font-display" style="font-weight: bold;">Sheep & Goats</p>
+          <p class="text-gold" style="font-size: 0.75rem; font-weight: 600;">350+ head</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto var(--space-xs);"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+          <p class="font-display" style="font-weight: bold;">Poultry</p>
+          <p class="text-gold" style="font-size: 0.75rem; font-weight: 600;">200+ birds</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="margin: 0 auto var(--space-xs);"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <p class="font-display" style="font-weight: bold;">Maize & Legumes</p>
+          <p class="text-gold" style="font-size: 0.75rem; font-weight: 600;">1,500 ha</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="bg-background">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="font-display text-center" style="font-size: 2rem; margin-bottom: var(--space-xl);">Our Journey</h2>
+      <div class="scroll-reveal">
+        <div class="flex gap-4" style="margin-bottom: var(--space-lg);">
+          <div class="timeline-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <p class="text-gold" style="font-weight: bold;">2019</p>
+            <h3 class="font-display">Cooperative Founded</h3>
+            <p style="color: var(--muted-foreground);">Amaz Amaj Primary Cooperative PTY LTD was established with a vision to transform rural agriculture.</p>
+          </div>
+        </div>
+        <div class="flex gap-4" style="margin-bottom: var(--space-lg);">
+          <div class="timeline-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <div>
+            <p class="text-gold" style="font-weight: bold;">2020</p>
+            <h3 class="font-display">First MOU Signed</h3>
+            <p style="color: var(--muted-foreground);">Initial agreements with partner villages to aggregate household garden plots into cooperative farming blocks.</p>
+          </div>
+        </div>
+        <div class="flex gap-4" style="margin-bottom: var(--space-lg);">
+          <div class="timeline-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <div>
+            <p class="text-gold" style="font-weight: bold;">2021</p>
+            <h3 class="font-display">Hemp Cultivation Begins</h3>
+            <p style="color: var(--muted-foreground);">800 hectares allocated for industrial hemp — fiber, seed, and CBD for premium markets.</p>
+          </div>
+        </div>
+        <div class="flex gap-4" style="margin-bottom: var(--space-lg);">
+          <div class="timeline-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M16 3h3v3M8 3H5v3M16 21h3v-3M8 21H5v-3"/><path d="M12 7v10M7 12h10"/></svg>
+          </div>
+          <div>
+            <p class="text-gold" style="font-weight: bold;">2022</p>
+            <h3 class="font-display">Livestock Program Launch</h3>
+            <p style="color: var(--muted-foreground);">Introduced cattle, sheep, goats, and poultry to diversify revenue and create rapid cash flow.</p>
+          </div>
+        </div>
+        <div class="flex gap-4" style="margin-bottom: var(--space-lg);">
+          <div class="timeline-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M3 6h18M9 12h6M5 18h14"/></svg>
+          </div>
+          <div>
+            <p class="text-gold" style="font-weight: bold;">2023</p>
+            <h3 class="font-display">First Export Deal</h3>
+            <p style="color: var(--muted-foreground);">Secured off-take agreements for hemp fiber and commercial grain for regional and export markets.</p>
+          </div>
+        </div>
+        <div class="flex gap-4">
+          <div class="timeline-dot">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polygon points="12 22 12 12 22 8 22 16 12 22"/></svg>
+          </div>
+          <div>
+            <p class="text-gold" style="font-weight: bold;">2024–2026</p>
+            <h3 class="font-display">Scaling Operations</h3>
+            <p style="color: var(--muted-foreground);">Expanding to 2,500+ hectares, 150+ partner households, and establishing value-added processing facilities.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="bg-card">
+    <div class="container">
+      <h2 class="font-display text-center" style="font-size: 2rem; margin-bottom: var(--space-xs);">Our Leadership</h2>
+      <p class="text-center" style="color: var(--muted-foreground); margin-bottom: var(--space-xl);">A dedicated team driving sustainable growth and community empowerment.</p>
+      <div class="grid grid-cols-3" style="gap: var(--space-lg);">
+        <div class="card text-center scroll-reveal">
+          <div class="icon-circle icon-circle-primary" style="width: 80px; height: 80px; margin: 0 auto var(--space-sm);">
+            <span class="font-display" style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">SD</span>
+          </div>
+          <h3 class="font-display">Sakumzi Dokoda</h3>
+          <p style="color: var(--muted-foreground);">Founder & Director</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <div class="icon-circle icon-circle-primary" style="width: 80px; height: 80px; margin: 0 auto var(--space-sm);">
+            <span class="font-display" style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">CB</span>
+          </div>
+          <h3 class="font-display">Community Board</h3>
+          <p style="color: var(--muted-foreground);">Village Representatives</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <div class="icon-circle icon-circle-primary" style="width: 80px; height: 80px; margin: 0 auto var(--space-sm);">
+            <span class="font-display" style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">AT</span>
+          </div>
+          <h3 class="font-display">Agricultural Team</h3>
+          <p style="color: var(--muted-foreground);">Farm Management</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials - Same background as your original earth color -->
+  <section class="testimonials-bg">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="font-display text-center" style="font-size: 2rem; color: white; margin-bottom: var(--space-xl);">What People Say</h2>
+      <div class="scroll-reveal" style="margin-bottom: var(--space-xl);">
+        <blockquote class="font-display" style="font-size: 1.25rem; color: rgba(255,255,255,0.95); text-align: center; font-style: italic; line-height: 1.5;">
+          "We signed the MOU because we saw our neighbors prosper. This is our land, and now we finally own our future."
+        </blockquote>
+        <p class="text-gold text-center" style="font-weight: 600; margin-top: var(--space-md);">Chief L. Ntabankulu</p>
+        <p class="text-center" style="color: rgba(255,255,255,0.6);">Village Chief</p>
+      </div>
+      <div class="scroll-reveal">
+        <blockquote class="font-display" style="font-size: 1.25rem; color: rgba(255,255,255,0.95); text-align: center; font-style: italic; line-height: 1.5;">
+          "The model is brilliant. Aggregated land without displacing the community. This is the future of ethical agri-investment."
+        </blockquote>
+        <p class="text-gold text-center" style="font-weight: 600; margin-top: var(--space-md);">Current Angel Investor</p>
+        <p class="text-center" style="color: rgba(255,255,255,0.6);">Name withheld</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="bg-background">
+    <div class="container">
+      <h2 class="font-display text-center" style="font-size: 2rem; margin-bottom: var(--space-xl);">Our Core Values</h2>
+      <div class="grid grid-cols-4" style="gap: var(--space-md);">
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto var(--space-sm);"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3 class="font-display" style="font-size: 1rem;">Community First</h3>
+          <p style="color: var(--muted-foreground); font-size: 0.75rem;">Every decision centers on uplifting the families who own the land.</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="margin: 0 auto var(--space-sm);"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          <h3 class="font-display" style="font-size: 1rem;">Sustainability</h3>
+          <p style="color: var(--muted-foreground); font-size: 0.75rem;">Organic practices, livestock integration, and long-term soil health.</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" style="margin: 0 auto var(--space-sm);"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <h3 class="font-display" style="font-size: 1rem;">Transparency</h3>
+          <p style="color: var(--muted-foreground); font-size: 0.75rem;">Open books, shared revenue, and honest communication with all stakeholders.</p>
+        </div>
+        <div class="card text-center scroll-reveal">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="margin: 0 auto var(--space-sm);"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <h3 class="font-display" style="font-size: 1rem;">Excellence</h3>
+          <p style="color: var(--muted-foreground); font-size: 0.75rem;">Commercial-grade outputs that compete in regional and export markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gold text-center">
+    <div class="container">
+      <p class="font-display" style="font-size: 2rem; color: var(--primary); font-weight: bold; margin-bottom: var(--space-sm);">
+        Interested in our cooperative model?
+      </p>
+      <p style="color: var(--primary); margin-bottom: var(--space-lg);">Learn more about how you can participate or invest.</p>
+      <button class="btn-primary" onclick="openModal()" style="background: var(--primary); color: white;">
+        Request Investor Deck
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div id="contactModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <h3 class="font-display" style="font-size: 1.5rem; margin-bottom: var(--space-md);">Request Investor Deck</h3>
+      <form id="contactForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone">
+        </div>
+        <div class="form-group">
+          <label>Message (Optional)</label>
+          <textarea rows="3" id="message"></textarea>
+        </div>
+        <button type="submit" class="btn-gold" style="width: 100%;">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    
+    const checkReveal = () => {
+      revealElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        if (rect.top < windowHeight - 100) {
+          el.classList.add('revealed');
+        }
+      });
+    };
+    
+    window.addEventListener('scroll', checkReveal);
+    window.addEventListener('load', checkReveal);
+    
+    // Modal functions
+    function openModal() {
+      document.getElementById('contactModal').classList.add('active');
+    }
+    
+    function closeModal() {
+      document.getElementById('contactModal').classList.remove('active');
+    }
+    
+    // Close modal on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+    
+    // Close modal when clicking overlay
+    document.getElementById('contactModal').addEventListener('click', (e) => {
+      if (e.target === document.getElementById('contactModal')) {
+        closeModal();
+      }
+    });
+    
+    // Form submission
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const message = document.getElementById('message').value;
+      
+      // Simple mailto fallback
+      window.location.href = `mailto:info@amazamaj.co.za?subject=Investor Deck Request&body=Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0A%0AMessage: ${message}`;
+      
+      alert('Thank you for your interest! We will contact you shortly.');
+      closeModal();
+      document.getElementById('contactForm').reset();
+    });
+    
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+</html>
